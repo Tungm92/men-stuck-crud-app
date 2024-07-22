@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Index</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <div class="index-header-div">
+        <h1>All Games</h1>
+        <a class="add-game" href="/games/new">Add a Game</a>
+    </div>
+    <ul>
+        <% games.forEach(game=> { %>
+            <li><a class="game-cards" href="/games/<%= game._id %>"><%= game.name %></a></li>
+        <% }); %>
+    </ul>
+</body>
+
+</html>

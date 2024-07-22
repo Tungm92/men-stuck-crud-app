@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Show Page</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <div class="game-details">
+        <h1><%= game.name %></h1>
+        <p>Genre: <%= game.genre %></p>
+        <% if (game.multiplayer) { %>
+            <p>This game has multiplayer!</p>
+        <% } else { %>
+            <p>This game has no multiplayer!</p>
+        <% } %>
+    </div>
+    
+    <div class="game-actions">
+        <form action="/games/<%=game._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete <%= game.name %></button>
+        </form>
+        <a href="/games/<%= game._id %>/edit">Edit <%= game.name %></a>
+    </div>
+    
+    <a class="games-index-link" href="/games">
+        <div class="index-link-text">Back to Games</div>
+    </a>
+</body>
+
+</html>

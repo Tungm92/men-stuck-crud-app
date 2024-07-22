@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Game</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+    <h1>Edit <%= game.name %>
+    </h1>
+    <form action="/games/<%= game._id %>?_method=PUT" method="POST">
+        <label form="name">Name:</label>
+        <input type="text" name="name" value="<%= game.name %>" />
+
+        <label form="genre">Genre:</label>
+        <input type="text" name="genre" value="<%= game.genre %>" />
+
+        <label form="multiplayer">Multiplayer?</label>
+        <input type="checkbox" name="multiplayer" <% if (game.multiplayer) { %>checked<% } %> />
+
+        <button type="submit">Update game info</button>
+    </form>
+    <a class="games-index-link" href="/games">
+        <div class="index-link-text">Back to Games</div>
+    </a>
+</body>
+
+</html>

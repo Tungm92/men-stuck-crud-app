@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track a Game</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Add a New Game to Your Tracker!</h1>
+    <a href="/games/">Back to Games</a>
+    <form action="/games" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+
+        <label for="genre">Genre:</label>
+        <input type="text" name="genre" id="genre" />
+    
+        <label for="multiplayer">Multiplayer?</label>
+        <input type="checkbox" name="multiplayer" id="multiplayer" />
+    
+        <button type="submit">Add Game</button>
+    </form>
+  </body>
+</html>
